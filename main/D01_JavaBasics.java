@@ -31,6 +31,15 @@ public class D01_JavaBasics {
     System.out.println("c: " + c);
   }
 
+  public static void arrays() {
+    int[] numbers = new int[5]; // C/C++: int numbers[5];
+    String[] names = {"Max", "Lisa", "Peter"};
+
+    numbers[3] = 42;
+    System.out.println(names[1]);
+    System.out.println("names.length: " + names.length);
+  }
+
   public static void cases() {
     /* Bedingte Anweisung */
     int age = 18;
@@ -41,7 +50,7 @@ public class D01_JavaBasics {
     // Bedingungs-Operator: ?
     if (gender == 'm' && (age >= 12 && age < 18)) {
       System.out.println("männlicher Teenager");
-    } else if (gender == 'w') {
+    } else if (gender == 'w' || gender == 'W') {
       System.out.println("weiblich");
     } else {
       System.out.println("divers, Junge, Mann");
@@ -49,6 +58,55 @@ public class D01_JavaBasics {
 
     boolean isAdult = age >= 18 ? true : false;
     System.out.println("isAdult: " + isAdult);
+
+    /* Fallunterscheidungen */
+    String genderText;
+    switch (gender) {
+      case 'M':
+      case 'm':
+        genderText = "männlich";
+        break;
+      case 'W':
+      case 'w':
+        genderText = "weiblich";
+        break;
+      default:
+        genderText = "divers";
+        break;
+    }
+    System.out.println("genderText: " + genderText);
+
+    /* seit Java 14 */
+    genderText = switch (gender) {
+      case 'm', 'M' -> "männlich";
+      case 'w', 'W' -> "weiblich";
+      default -> "divers";
+    };
+    System.out.println("genderText: " + genderText);
+  }
+
+  public static void loops() {
+    int i = 0;
+    while (i < 5) {
+      System.out.println(i + 1);
+      i++;
+    }
+    System.out.println();
+
+    i = 0;
+    do {
+      System.out.println(i + 1);
+      i++;
+    } while (i < 5);
+    System.out.println();
+
+    for (i = 0; i < 10; i++) {
+      if (i % 2 == 0) {
+        continue; // break;
+      }
+      System.out.println(i + 1);
+    }
+    System.out.println();
   }
 
   public static void main(String[] args) {
@@ -63,6 +121,18 @@ public class D01_JavaBasics {
 
     /* Bedingte Anweisungen und Fallunterscheidungen */
     cases();
+    System.out.println();
+
+    /* Schleifen */
+    loops();
+    System.out.println();
+
+    /* Zeichenketten (Strings) */
+    strings();
+    System.out.println();
+
+    /* Felder (Arrays) */
+    arrays();
     System.out.println();
 
   }
@@ -90,6 +160,26 @@ public class D01_JavaBasics {
     System.out.println("a2: " + a2);
     System.out.println("a3: " + a3);
     System.out.println("a4: " + a4);
+  }
+
+  public static void strings() {
+    String names = "Max"; // C: char names[50] = "Max";
+
+    int length = names.length(); // C: int length = strlen(names);
+    names = names + ";Lisa;Peter"; // C/C++: strcat(names, ";Lisa;Peter");
+    String[] tokens = names.split(";");
+
+    if (names.equals("Max;Lisa;Peter")) { // C/C++: if (strcmp(names, "Max;Peter;Lisa") == 0) {...}
+      System.out.println(true);
+    }
+
+    System.out.println("length: " + length);
+    System.out.println("names: " + names);
+    System.out.println("tokens: " + tokens);
+
+    for (int i = 0; i < tokens.length; i++) {
+      System.out.println(i + ": " + tokens[i]);
+    }
   }
 
 }
