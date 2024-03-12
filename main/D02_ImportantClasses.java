@@ -13,6 +13,7 @@ import java.util.Scanner;
  */
 public class D02_ImportantClasses {
 
+  @SuppressWarnings("resource")
   public static void main(String[] args) {
 
     /* String */
