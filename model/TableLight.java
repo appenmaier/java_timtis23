@@ -4,16 +4,16 @@ package model;
  * Tischleuchte
  *
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  *
  */
 public class TableLight {
 
   /* Attribute */
-  public boolean isShining;
-  public boolean isConnected;
-  public boolean isOn;
-  public LightBulb lightBulb;
+  private boolean isShining;
+  private boolean isConnected;
+  private boolean isOn;
+  private LightBulb lightBulb;
 
   /* Methoden */
   /**
@@ -63,7 +63,22 @@ public class TableLight {
   public LightBulb changeLightBulb(LightBulb newLightBulb) {
     LightBulb oldLightBulb = lightBulb;
     lightBulb = newLightBulb;
+
+    if (isOn == true && isConnected == true) {
+      isShining = true;
+    }
     return oldLightBulb;
+  }
+
+  public boolean isShining() {
+    return isShining;
+  }
+
+  public String getLightBulbColor() {
+    if (lightBulb != null) {
+      return lightBulb.getColor();
+    }
+    return null;
   }
 
 }
