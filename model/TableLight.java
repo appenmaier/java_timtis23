@@ -81,4 +81,10 @@ public class TableLight {
     return null;
   }
 
+  @Override
+  public String toString() {
+    return "TableLight [isShining=" + isShining + ", isConnected=" + isConnected + ", isOn=" + isOn
+        + ", lightBulb=" + lightBulb + "]";
+  }
+
 }

@@ -10,7 +10,7 @@ package model;
 public class LightBulb {
 
   /* Attribute */
-  private String color;
+  private final String color;
 
   /* Methoden */
   public LightBulb(String color) {
@@ -19,6 +19,11 @@ public class LightBulb {
 
   public String getColor() {
     return color;
+  }
+
+  @Override
+  public String toString() {
+    return "LightBulb [color=" + color + "]";
   }
 
 }
