@@ -14,8 +14,17 @@ public class TableLight {
   private boolean isConnected;
   private boolean isOn;
   private LightBulb lightBulb;
+  private final PlugType plugType;
 
   /* Methoden */
+  public TableLight() {
+    plugType = PlugType.TYPE_F;
+  }
+
+  public TableLight(PlugType plugType) {
+    this.plugType = plugType;
+  }
+
   /**
    * Steckt die Tischleuchte ein
    */
