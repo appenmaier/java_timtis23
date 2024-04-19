@@ -4,7 +4,7 @@ package model;
  * Tischleuchte
  *
  * @author Daniel Appenmaier
- * @version 2.0
+ * @version 3.0
  *
  */
 public class TableLight {
@@ -90,10 +90,26 @@ public class TableLight {
     return null;
   }
 
+  public boolean isConnected() {
+    return isConnected;
+  }
+
+  public boolean isOn() {
+    return isOn;
+  }
+
+  public LightBulb getLightBulb() {
+    return lightBulb;
+  }
+
+  public PlugType getPlugType() {
+    return plugType;
+  }
+
   @Override
   public String toString() {
     return "TableLight [isShining=" + isShining + ", isConnected=" + isConnected + ", isOn=" + isOn
-        + ", lightBulb=" + lightBulb + "]";
+        + ", lightBulb=" + lightBulb + ", plugType=" + plugType + "]";
   }
 
 }

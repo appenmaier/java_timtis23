@@ -3,6 +3,13 @@ package main;
 import java.util.ArrayList;
 import model.Pet;
 
+/**
+ * Wiederholung: OO
+ *
+ * @author Daniel Appenmaier
+ * @version 1.0
+ *
+ */
 public class D04_RepetitionOO {
 
   public static void main(String[] args) {

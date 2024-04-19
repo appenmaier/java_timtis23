@@ -1,7 +1,6 @@
 package main;
 
 import model.PlugType;
-import model.TableLight;
 
 /**
  * Aufzählungen
@@ -14,8 +13,13 @@ public class D06_Enumerations {
 
   public static void main(String[] args) {
 
-    TableLight t1 = new TableLight();
-    TableLight t2 = new TableLight(PlugType.TYPE_B);
+    PlugType p1 = PlugType.TYPE_F;
+    PlugType p2 = PlugType.TYPE_B;
+    PlugType p3 = PlugType.TYPE_F;
+
+    System.out.println(p1);
+    System.out.println(p2);
+    System.out.println(p3);
 
   }
 

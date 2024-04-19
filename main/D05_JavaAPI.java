@@ -20,11 +20,11 @@ public class D05_JavaAPI {
     /* Wrapper-Klassen */
     double double1 = Double.parseDouble("3.14");
     Double double2 = Double.valueOf("3.14");
-    double double3 = double2;
     System.out.println("double1: " + double1);
     System.out.println("double2: " + double2);
 
     String doubleText = String.valueOf(double1);
+    System.out.println(doubleText);
 
     /* LocalDate / LocalTime / LocalDateTime */
     LocalDateTime now = LocalDateTime.now();
@@ -33,7 +33,7 @@ public class D05_JavaAPI {
     System.out.println(now);
 
     LocalDateTime christmas = LocalDateTime.of(2024, 12, 24, 0, 0);
-    // System.out.printf(Locale.GERMAN, "%t", now);
+    System.out.println(christmas);
 
     /* Scanner, File */
     File file = new File("resources/inputs.csv");
@@ -50,6 +50,8 @@ public class D05_JavaAPI {
 
       System.out.println(number + " " + text + " " + sign + " " + plugType.getNorm());
     }
+
+    scanner.close();
 
   }
 
