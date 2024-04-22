@@ -18,7 +18,7 @@
 - Gib nachfolgende Informationen ein und betätige die Drucktaste `Finish`
   - Import source: `[Pfad/Der Name Deines lokalen Repositorys]`
 
-## Aktualisiere das Lokale Repository
+## Aktualisiere das lokale Repository
 
 - Starte die Kommandozeile (z.B. Windows PowerShell)
 - Führe den Befehl `cd "[Pfad/Der Name Deines lokalen Repositorys]"` aus, um zum Arbeitsbereich Deines lokalen Repositorys zu wechseln
