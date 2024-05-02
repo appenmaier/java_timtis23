@@ -4,21 +4,20 @@ package model;
  * Tischleuchte
  *
  * @author Daniel Appenmaier
- * @version 3.0
+ * @version 4.0
  *
  */
-public class TableLight {
+public class TableLight extends Light implements WiredDevice {
 
   /* Attribute */
-  private boolean isShining;
   private boolean isConnected;
-  private boolean isOn;
   private LightBulb lightBulb;
   private final PlugType plugType;
 
   /* Methoden */
   public TableLight() {
     plugType = PlugType.TYPE_F;
+    lightBulb = new LightBulb("weiss");
   }
 
   public TableLight(PlugType plugType) {
@@ -28,6 +27,7 @@ public class TableLight {
   /**
    * Steckt die Tischleuchte ein
    */
+  @Override
   public void plugIn() {
     isConnected = true;
 
@@ -39,6 +39,7 @@ public class TableLight {
   /**
    * Steckt die Tischleuchte aus
    */
+  @Override
   public void pullThePlug() {
     isConnected = false;
     isShining = false;
@@ -47,20 +48,14 @@ public class TableLight {
   /**
    * Schaltet die Tischleuchte ein
    */
+
+  @Override
   public void switchOn() {
     isOn = true;
 
     if (isConnected == true && lightBulb != null) {
       isShining = true;
     }
-  }
-
-  /**
-   * Schaltet die Tischleuchte aus
-   */
-  public void switchOff() {
-    isOn = false;
-    isShining = false;
   }
 
   /**
@@ -79,10 +74,6 @@ public class TableLight {
     return oldLightBulb;
   }
 
-  public boolean isShining() {
-    return isShining;
-  }
-
   public String getLightBulbColor() {
     if (lightBulb != null) {
       return lightBulb.getColor();
@@ -92,10 +83,6 @@ public class TableLight {
 
   public boolean isConnected() {
     return isConnected;
-  }
-
-  public boolean isOn() {
-    return isOn;
   }
 
   public LightBulb getLightBulb() {
