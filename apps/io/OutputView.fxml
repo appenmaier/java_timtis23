@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="5.0"
+	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="apps.OutputController">
+	<padding>
+		<Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+	</padding>
+	<children>
+		<Label fx:id="inputLabel" text="Label" />
+	</children>
+</VBox>
