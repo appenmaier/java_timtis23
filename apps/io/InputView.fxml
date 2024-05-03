@@ -8,7 +8,7 @@
 
 <VBox alignment="CENTER" spacing="5.0"
 	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="apps.InputController">
+	fx:controller="apps.io.InputController">
 	<children>
 		<TextField fx:id="inputTextField" promptText="Eingabe" />
 		<Button text="Weiter" onAction="#goToOutput" />
