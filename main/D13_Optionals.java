@@ -18,9 +18,12 @@ public class D13_Optionals {
     if (optional.isPresent()) {
       String text = optional.get();
       System.out.println(text.length());
+    } else {
+      System.out.println("Text ist null");
     }
 
-    optional.ifPresent(t -> t.length());
+    optional.ifPresentOrElse(text -> System.out.println(text.length()),
+        () -> System.out.println("Text ist null"));
 
   }
 
