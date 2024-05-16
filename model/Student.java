@@ -3,7 +3,15 @@ package model;
 import java.util.Map;
 import java.util.Set;
 
-public record Student(String id, String name, Map<String, Double> grades) {
+/**
+ * Studierender
+ *
+ * @author Daniel Appenmaier
+ * @version 1.0
+ *
+ */
+public record Student(String id, String name, Map<String, Double> grades)
+    implements Comparable<Student> {
 
   public void setGrade(String lecture, double grade)
       throws InvalidGradeException, InvalidLectureException {
@@ -34,6 +42,15 @@ public record Student(String id, String name, Map<String, Double> grades) {
 
   public Set<String> getLectures() {
     return grades.keySet();
+  }
+
+  @Override
+  public int compareTo(Student o) {
+    return name.compareTo(o.name);
+  }
+
+  public void greet() {
+    System.out.println("Hallo, mein Name lautet " + name);
   }
 
 }
